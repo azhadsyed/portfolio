@@ -1,150 +1,98 @@
-import * as React from "react"
+import React from "react";
+import styles from "./components.module.css";
+import { Gramophone, Building, MusicalNote, GitHub, LinkChain } from "./icons";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: "300",
-  fontSize: "24px",
-  maxWidth: "560px",
-}
+const Container = ({ children }) => {
+  return <div className={styles.container}>{children}</div>;
+};
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: "16px",
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: "14px",
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#000000",
-  },
-]
-
-// markup
-const IndexPage = () => {
+const Project = (props) => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
+    <div className={styles.project}>
+      <div className={styles.left}>
+        <h3>{props.title}</h3>
+        {props.description}
         <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
-}
+        <br />
+        <LinkChain /> <GitHub />
+      </div>
+      <div className={styles.right}>{props.children}</div>
+    </div>
+  );
+};
 
-export default IndexPage
+const About = () => {
+  return (
+    <>
+      {" "}
+      <p>
+        I'm a New York-based software engineer with experience in the music
+        industry.
+      </p>
+      <p>
+        I'm interested in backend development, data engineering, and cloud
+        infrastructure.
+      </p>
+      <p>
+        I'm especially interested in the intersection of entertainment and
+        technology. I'd like to:
+        <ul>
+          <li>build data-driven consumer products</li>
+          <li>improve financial systems in the music and talent industries</li>
+          <li>create business tooling for artists and creatives</li>
+        </ul>
+      </p>
+      <p>
+        Before software, I was a finance manager and royalties analyst in Los
+        Angeles. My previous employers include{" "}
+        <a href="https://www.universalmusic.com/">Universal Music Group</a>,{" "}
+        <a href="https://88nightmarket.com/">88rising</a>, and{" "}
+        <a href="http://spiritmusicgroup.com/">Spirit Music Group</a>.
+      </p>
+      <p>
+        <a href="foo">Here's a copy of my resume.</a>
+      </p>
+      <p>
+        Outside of work, you can find me algoraving in Supercollider, playing
+        piano/bansuri, hiking, and trying to photograph the elusive Great Blue
+        Heron that lives down the road.
+      </p>
+    </>
+  );
+};
+
+export default function Home() {
+  var widthVal = "75%";
+  return (
+    <Container>
+      <h1>Hi! I'm Azhad.</h1>
+      <About />
+      <h1>Projects</h1>
+      <Project
+        title="NYC Rent Estimator"
+        link="https://howmuchrent.herokuapp.com/"
+        github="https://github.com/azhadsyed/housing"
+        description="A machine learning app that uses Craiglist data to suggest rent prices in NYC. Implemented using random forests. Built in Python using Pandas, Scikit-learn and Flask/Gunicorn."
+      >
+        <Building width={widthVal} />
+      </Project>
+      <Project
+        title="Passnotes"
+        link="https://passnotes.herokuapp.com/"
+        github=""
+        description="A musical social media app. Message boards are password-protected by short songs instead of alphanumeric passwords. Built in JavaScript using React, Express, Tone.js and MongoDB."
+      >
+        <MusicalNote width={widthVal} />
+      </Project>
+      <Project
+        title="Hot or Not: Analyzing the Billboard Hot 100"
+        link="https://towardsdatascience.com/hot-or-not-analyzing-60-years-of-billboard-hot-100-data-21e1a02cf304"
+        github=""
+        description="A data-driven essay on the state of the music industry, based on the Billboard Hot 100 charts. Data cleaned and analyzed in Python using Pandas, Numpy, and visualized with Plotly."
+      >
+        <Gramophone width={widthVal} />
+      </Project>
+      <h1>Contact</h1>
+    </Container>
+  );
+}
