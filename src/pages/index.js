@@ -1,6 +1,8 @@
 import React from "react";
-import styles from "./components.module.css";
+import styles from "./index.module.css";
 import { Gramophone, Building, MusicalNote, GitHub, LinkChain } from "./icons";
+import ContactForm from "./components/ContactForm";
+import Footer from "./components/Footer.js";
 
 const Container = ({ children }) => {
   return <div className={styles.container}>{children}</div>;
@@ -35,13 +37,13 @@ const About = () => {
       </p>
       <p>
         I'm especially interested in the intersection of entertainment and
-        technology. I'd like to:
-        <ul>
-          <li>build data-driven consumer products</li>
-          <li>improve financial systems in the music and talent industries</li>
-          <li>create business tooling for artists and creatives</li>
-        </ul>
+        technology. I want to:
       </p>
+      <ul>
+        <li>build data-driven consumer products</li>
+        <li>improve financial systems in the music and talent industries</li>
+        <li>create business tooling for artists and creatives</li>
+      </ul>
       <p>
         Before software, I was a finance manager and royalties analyst in Los
         Angeles. My previous employers include{" "}
@@ -50,13 +52,20 @@ const About = () => {
         <a href="http://spiritmusicgroup.com/">Spirit Music Group</a>.
       </p>
       <p>
-        <a href="foo">Here's a copy of my resume.</a>
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+          Here's a copy of my resume.
+        </a>
       </p>
-      <p>
-        Outside of work, you can find me algoraving in Supercollider, playing
-        piano/bansuri, hiking, and trying to photograph the elusive Great Blue
-        Heron that lives down the road.
-      </p>
+      <p>Outside of work, you can find me:</p>
+      <ul>
+        <li>algoraving in Supercollider</li>
+        <li>playing piano/bansuri</li>
+        <li>hiking</li>
+        <li>
+          trying to photograph the elusive Great Blue Heron that lives down the
+          road
+        </li>
+      </ul>
     </>
   );
 };
@@ -93,6 +102,9 @@ export default function Home() {
         <Gramophone width={widthVal} />
       </Project>
       <h1>Contact</h1>
+      <ContactForm />
+      <br />
+      <Footer />
     </Container>
   );
 }
