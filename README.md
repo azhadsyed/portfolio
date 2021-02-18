@@ -4,7 +4,7 @@ Wish him luck!
 
 Trivia:
 
-- [Want to vs. Like to](https://www.quora.com/What-are-the-differences-between-I-want-to-and-I-would-like-to#:~:text='I%20want%20to'%20is%20in,important%20to%20ask%20you%20nicely))
+- [Want to vs. Like to](https://www.quora.com/What-are-the-differences-between-I-want-to-and-I-would-like-to#:~:text='I%20want%20to'%20is%20in,important%20to%20ask%20you%20nicely)
 
 ## Requirements
 
