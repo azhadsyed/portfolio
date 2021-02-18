@@ -56,7 +56,7 @@ function LinkChain(props) {
   );
 }
 
-function LinkedIn(props) {
+function Instagram(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ function LinkedIn(props) {
   );
 }
 
-function Instagram(props) {
+function LinkedIn(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -92,3 +92,5 @@ export {
   LinkedIn,
   Instagram,
 };
+
+export default Gramophone;

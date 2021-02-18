@@ -7,7 +7,7 @@ const Footer = () => {
       <a href="https://github.com/azhadsyed">
         <GitHub />
       </a>{" "}
-      <a href="https://linkedin.com/in/azhadsyed">
+      <a href="https://linkedin.com/in/azhad-syed">
         <LinkedIn />
       </a>{" "}
       <a href="https://www.instagram.com/azhadsyed">
@@ -16,7 +16,7 @@ const Footer = () => {
       <br />
       Copyright &copy; 2021 Azhad Syed
       <br />
-      Made with React
+      Made with Gatsby
       <br />
       <br />
     </>
