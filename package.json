@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "emailjs-com": "^2.6.4",
     "gatsby": "^2.32.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

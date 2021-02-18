@@ -1,4 +1,14 @@
 html {
+  font-size: 1.5em;
   background-color: floralwhite;
   font-family: Arial;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
 }

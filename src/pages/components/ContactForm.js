@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
+import emailjs from "emailjs-com";
+
 const ContactForm = () => {
   const [inputName, setInputName] = useState("");
   const [inputEmail, setInputEmail] = useState("");
@@ -30,15 +32,17 @@ const ContactForm = () => {
     const inputIsEmail = /[^@]*@.*[.].*/.test(inputEmail);
 
     if (inputIsEmail) {
-      const serviceId = "service_id";
-      const templateId = "template_id";
+      const serviceId = process.env.GATSBY_SERVICE_ID;
+      const templateId = process.env.GATSBY_TEMPLATE_ID;
+      const userId = process.env.GATSBY_USER_ID;
+      console.log(serviceId, templateId, userId);
       const variables = {
         from_name: inputName,
         reply_to: inputEmail,
         message: inputMessage,
       };
 
-      await window.emailjs.send(serviceId, templateId, variables);
+      await emailjs.send(serviceId, templateId, variables, userId);
 
       setSubmitMessage("Sent! Thanks for reaching out :)");
       setSubmitted(true);

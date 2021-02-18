@@ -21,14 +21,16 @@ Build
 - [x] get SVG images to show
 - [x] Add contact form
 - [x] setup client-side validation
-- [x] get email sending to work (1 test)
 - [x] get PDF download to work
 - [x] Add social media icons
-- [ ] Change link hover formatting
-- [ ] Activate links
+- [x] Change link hover formatting
+- [x] Activate links
+- [x] get email sending to work (1 test)
+- [x] Add a Circle-framed picture of me
 
 Host
 
+- [ ] Choose a hosting solution
 - [ ] setup environment variables
 - [ ] Host
 

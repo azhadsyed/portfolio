@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./index.module.css";
 import { Gramophone, Building, MusicalNote, GitHub, LinkChain } from "./icons";
 import ContactForm from "./components/ContactForm";
-import Footer from "./components/Footer.js";
+import Footer from "./components/Footer";
 
 const Container = ({ children }) => {
   return <div className={styles.container}>{children}</div>;
@@ -12,11 +12,18 @@ const Project = (props) => {
   return (
     <div className={styles.project}>
       <div className={styles.left}>
-        <h3>{props.title}</h3>
+        <a href={props.link}>
+          <h3 style={{ color: "black" }}>{props.title}</h3>
+        </a>
         {props.description}
         <br />
         <br />
-        <LinkChain /> <GitHub />
+        <a href={props.link}>
+          <LinkChain />
+        </a>{" "}
+        <a href={props.github}>
+          <GitHub />
+        </a>
       </div>
       <div className={styles.right}>{props.children}</div>
     </div>
@@ -42,7 +49,7 @@ const About = () => {
       <ul>
         <li>build data-driven consumer products</li>
         <li>improve financial systems in the music and talent industries</li>
-        <li>create business tooling for artists and creatives</li>
+        <li>design business tooling for artists and creatives</li>
       </ul>
       <p>
         Before software, I was a finance manager and royalties analyst in Los
@@ -74,7 +81,27 @@ export default function Home() {
   var widthVal = "75%";
   return (
     <Container>
-      <h1>Hi! I'm Azhad.</h1>
+      <div>
+        <img
+          src="profile.jpg"
+          style={{
+            width: "25%",
+            height: "25%",
+            borderRadius: "50%",
+            border: "6px solid black",
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        />
+      </div>
+      <h1
+        style={{
+          textAlign: "center",
+        }}
+      >
+        Hi! I'm Azhad.
+      </h1>
       <About />
       <h1>Projects</h1>
       <Project
@@ -88,7 +115,7 @@ export default function Home() {
       <Project
         title="Passnotes"
         link="https://passnotes.herokuapp.com/"
-        github=""
+        github="https://github.com/azhadsyed/passnotes-react"
         description="A musical social media app. Message boards are password-protected by short songs instead of alphanumeric passwords. Built in JavaScript using React, Express, Tone.js and MongoDB."
       >
         <MusicalNote width={widthVal} />
@@ -96,7 +123,7 @@ export default function Home() {
       <Project
         title="Hot or Not: Analyzing the Billboard Hot 100"
         link="https://towardsdatascience.com/hot-or-not-analyzing-60-years-of-billboard-hot-100-data-21e1a02cf304"
-        github=""
+        github="https://github.com/azhadsyed/billboard-hot-or-not"
         description="A data-driven essay on the state of the music industry, based on the Billboard Hot 100 charts. Data cleaned and analyzed in Python using Pandas, Numpy, and visualized with Plotly."
       >
         <Gramophone width={widthVal} />
