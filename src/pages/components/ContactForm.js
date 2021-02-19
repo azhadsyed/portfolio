@@ -52,7 +52,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form>
+    <>
       <TextField id="standard-basic" label="Name" onChange={handleNameChange} />
       <br />
       <TextField
@@ -80,7 +80,7 @@ const ContactForm = () => {
         disabled={
           inputName.length === 0 ||
           inputEmail.length === 0 ||
-          inputMessage === 0 ||
+          inputMessage.length === 0 ||
           submitted
         }
         onClick={handleSubmit}
@@ -90,7 +90,7 @@ const ContactForm = () => {
       <br />
       <br />
       {submitMessage}
-    </form>
+    </>
   );
 };
 
